@@ -1,0 +1,25 @@
+main {
+    background-color: blue;
+}
+
+article {
+    background-color: red;
+    display: flex;
+    flex-flow: column wrap;
+    margin: 10px;
+    justify-content: center;
+
+}
+
+section {
+    flex: 1;
+    background-color: yellow;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 10px;    
+    justify-content: center;
+}
+
+figure {
+    background-color: green;
+}
