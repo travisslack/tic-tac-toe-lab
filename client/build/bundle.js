@@ -9637,16 +9637,52 @@ var GameContainer = function (_Component) {
             leftColumn: [],
             middleColumn: [],
             rightColumn: [],
-            leftRow: [],
+            topRow: [],
             middleRow: [],
-            rightRow: [],
+            bottomRow: [],
             leftDiag: [],
             rightDiag: []
         };
+        _this.handleDetailClick = _this.handleDetailClick.bind(_this);
         return _this;
     }
 
     _createClass(GameContainer, [{
+        key: 'addToArrays',
+        value: function addToArrays(event, value) {
+            if (id === "1" || id === "2" || id === "3") {
+                this.setState({ topRow: this.state.topRow.push(value) });
+            }
+
+            if (id === "4" || id === "5" || id === "6") {
+                this.setState({ middleRow: this.state.middleRow.push(value) });
+            }
+
+            if (id === "7" || id === "8" || id === "9") {
+                this.setState({ bottomRow: this.state.bottomRow.push(value) });
+            }
+
+            if (id === "1" || id === "4" || id === "7") {
+                this.setState({ leftColumn: this.state.leftColumn.push(value) });
+            }
+
+            if (id === "2" || id === "5" || id === "8") {
+                this.setState({ middleColumn: this.state.middleColumn.push(value) });
+            }
+
+            if (id === "3" || id === "6" || id === "9") {
+                this.setState({ rightColumn: this.state.rightColumn.push(value) });
+            }
+
+            if (id === "1" || id === "5" || id === "9") {
+                this.setState({ leftDiag: this.state.leftDiag.push(value) });
+            }
+
+            if (id === "3" || id === "5" || id === "7") {
+                this.setState({ rightDiag: this.state.rightDiag.push(value) });
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -9749,23 +9785,23 @@ var GameBoard = function (_Component) {
                 _react2.default.createElement(
                     "section",
                     null,
-                    _react2.default.createElement(_SquareDetail2.default, null),
-                    _react2.default.createElement(_SquareDetail2.default, null),
-                    _react2.default.createElement(_SquareDetail2.default, null)
+                    _react2.default.createElement(_SquareDetail2.default, { id: "1" }),
+                    _react2.default.createElement(_SquareDetail2.default, { id: "2" }),
+                    _react2.default.createElement(_SquareDetail2.default, { id: "3" })
                 ),
                 _react2.default.createElement(
                     "section",
                     null,
-                    _react2.default.createElement(_SquareDetail2.default, null),
-                    _react2.default.createElement(_SquareDetail2.default, null),
-                    _react2.default.createElement(_SquareDetail2.default, null)
+                    _react2.default.createElement(_SquareDetail2.default, { id: "4" }),
+                    _react2.default.createElement(_SquareDetail2.default, { id: "5" }),
+                    _react2.default.createElement(_SquareDetail2.default, { id: "6" })
                 ),
                 _react2.default.createElement(
                     "section",
                     null,
-                    _react2.default.createElement(_SquareDetail2.default, null),
-                    _react2.default.createElement(_SquareDetail2.default, null),
-                    _react2.default.createElement(_SquareDetail2.default, null)
+                    _react2.default.createElement(_SquareDetail2.default, { id: "7" }),
+                    _react2.default.createElement(_SquareDetail2.default, { id: "8" }),
+                    _react2.default.createElement(_SquareDetail2.default, { id: "9" })
                 )
             );
         }
